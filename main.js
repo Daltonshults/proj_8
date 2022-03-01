@@ -18,7 +18,7 @@ function bindNavBarClickHandlers(event) {
   let categoriesLink = document.getElementById("lnk-categories")
   let displayLink = document.getElementById("lnk-manufacturers")
   displayLink.addEventListener("click", displayManufacturers)
-  categoriesLink.addEventListener("click", displayCategories)
+  categoriesLink.addEventListener("click", displayCategories2)
   //displayLink.addEventListener("click", displayManufacturers)
 }
 
@@ -32,12 +32,12 @@ function displayCategories(event) {
   main = document.getElementById("main")
   main.innerHTML = string
 }
-
+/*
 function displayManufacturers(event) {
-  //alert("Hello")
+
   event.preventDefault()
   let thing = '<h2>Manufacturers</h2><ul id="categories">'
-  //htmlString ='<h2>Manufacturers</h2><ul id="categories"><li><h3><a href="manufacturer_5.html">BMW</a></h3></li><li><h3><a href="manufacturer_2.html">Honda</a></h3></li><li><h3><a href="manufacturer_1.html">Indian</a></h3></li><li><h3><a href="manufacturer_3.html">Triumph</a></h3></li><li><h3><a href="manufacturer_4.html">Victory</a></h3></li></ul>'
+
 
   for (j = 0; j < manufacturers.length; j++) {
     thing += "<li><h3><a href='/manufacturer_" + manufacturers[j].id + ".html'>" + manufacturers[j].name + "</a></h3></li>"
@@ -49,6 +49,67 @@ function displayManufacturers(event) {
   main.innerHTML = thing
 
 }
+*/
 
-document.addEventListener("DOMContentLoaded", bindNavBarClickHandlers)
+function displayCategories2(event) {
+  event.preventDefault()
+
+
+  let h2 = document.createElement('h2')
+  h2.innerText = "Categories"
+
+  let ul = document.createElement("ul")
+  ul.id = "categories"
+
+  main = document.getElementById("main")
+  main.innerHTML = ""
+  main.append(h2)
+  main.append(ul)
+
+
+  for (i = 0; i < categories.length; i++) {
+    let li = document.createElement("li")
+    let h3 = document.createElement("h3")
+    let a = document.createElement('a')
+    a.innerText = categories[i].name
+    a.href = "/category_" + categories[i].id + ".html"
+
+    li.appendChild(h3)
+    h3.appendChild(a)
+    ul.appendChild(li)
+  }
+
+}
+
+function displayManufacturers(event) {
+
+  event.preventDefault()
+
+  let h2 = document.createElement('h2')
+  h2.innerText = "Manufacturers"
+
+  let ul = document.createElement('ul')
+  ul.id = "categories"
+
+  main = document.getElementById("main")
+  main.innerHTML = ""
+  main.append(h2)
+  main.append(ul)
+
+
+  for (j = 0; j < manufacturers.length; j++) {
+    let li = document.createElement('li')
+    let h3 = document.createElement('h3')
+    let a = document.createElement('a')
+    a.innerText = manufacturers[j].name
+    a.href = "/manufacturer_" + manufacturers[j].id + ".html"
+
+    li.appendChild(h3)
+    h3.appendChild(a)
+    ul.appendChild(li)
+
+  }
+
+}
+
 document.addEventListener("DOMContentLoaded", bindNavBarClickHandlers)
