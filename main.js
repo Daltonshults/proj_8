@@ -18,40 +18,12 @@ function bindNavBarClickHandlers(event) {
   let categoriesLink = document.getElementById("lnk-categories")
   let displayLink = document.getElementById("lnk-manufacturers")
   displayLink.addEventListener("click", displayManufacturers)
-  categoriesLink.addEventListener("click", displayCategories2)
+  categoriesLink.addEventListener("click", displayCategories)
   //displayLink.addEventListener("click", displayManufacturers)
 }
 
+
 function displayCategories(event) {
-  event.preventDefault()
-  let string = '<h2>Categories</h2><ul id="categories">'
-  for (i = 0; i < categories.length; i++) {
-    string += "<li><h3><a href='/category_" + categories[i].id + ".html'>" + categories[i].name + "</a></h3></li>"
-  }
-  string += "</ul>"
-  main = document.getElementById("main")
-  main.innerHTML = string
-}
-/*
-function displayManufacturers(event) {
-
-  event.preventDefault()
-  let thing = '<h2>Manufacturers</h2><ul id="categories">'
-
-
-  for (j = 0; j < manufacturers.length; j++) {
-    thing += "<li><h3><a href='/manufacturer_" + manufacturers[j].id + ".html'>" + manufacturers[j].name + "</a></h3></li>"
-  }
-
-  thing += "</ul>"
-
-  main = document.getElementById("main")
-  main.innerHTML = thing
-
-}
-*/
-
-function displayCategories2(event) {
   event.preventDefault()
 
 
