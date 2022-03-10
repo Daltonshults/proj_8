@@ -19,9 +19,7 @@ function bindNavBarClickHandlers(event) {
   let displayLink = document.getElementById("lnk-manufacturers")
   displayLink.addEventListener("click", displayManufacturers)
   categoriesLink.addEventListener("click", displayCategories)
-  //displayLink.addEventListener("click", displayManufacturers)
 }
-
 
 function displayCategories(event) {
   event.preventDefault()
